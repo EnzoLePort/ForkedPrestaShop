@@ -54,6 +54,11 @@ class WebserviceSpecificManagementStoreManyStocks implements WebserviceSpecificM
     }
  
     public function manage() {
+        $objects_products = [];
+        $objects_products['empty'] = new Product();
+        $this->_resourceConfiguration = $objects_products[
+            'empty'
+        ]->getWebserviceParameters();
         return $this->wsObject->getOutputEnabled();
     }
 

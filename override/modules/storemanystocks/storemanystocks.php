@@ -1,10 +1,9 @@
 <?php
-
 if (!defined('_PS_VERSION_')) {
-    exit();
+    exit;
 }
 
-class StoreManyStocksAPI extends Module
+class StoreManyStocks extends Module
 {
     public function __construct()
     {
@@ -38,7 +37,7 @@ class StoreManyStocksAPI extends Module
 
     public function uninstall()
     {
-        return parent:uninstall() && Configuration::deleteByName('storemanystocksapi');
+        return parent::uninstall() && Configuration::deleteByName('storemanystocksapi');
     }
 
     public function hookAddWebserviceResources($params)
